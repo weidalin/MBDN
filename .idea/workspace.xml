@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4220dbc2-f2a2-4cbb-bb58-bec9be079001" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Adapted-Center-and-Scale-Prediction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Adapted-Center-and-Scale-Prediction.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jzgIRMOrOV3XnisAC1VCE2hBDt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/models/Caltech_V0_resnetv2sn50_1centergaussmap_originaladdsenetinresnet_480_640_1gpuper1img_lr0.0002/backup" />
+      <recent name="$PROJECT_DIR$/eval_city" />
+      <recent name="$PROJECT_DIR$/dataloader" />
+      <recent name="$PROJECT_DIR$/data/citypersons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/models_baskup" />
+      <recent name="$PROJECT_DIR$/models/V5_resnetv2sn50_4brand4center4gaussmap_640_1280_2gpuper2img_lr0.0002/ckpt" />
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/models/V47_resnetv2sn101_headandfullvisiblebottom4center4gaussmap_triggerat_refineloss_pretrainfrom_best_originalgausspointmutiyy1103add08_544_1088_1gpuper1img_lr0.0002/ckpt" />
+      <recent name="$PROJECT_DIR$/models/V24_resnetv2sn50_headandfull2center2gaussmap_fixoffloss_fixtopgaussmap_sigis08_640_1280_1gpuper1img_lr0.0002/ckpt" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test_vis">
+    <configuration name="draw_bbox (1)" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/util" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/util/draw_bbox.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="draw_bbox (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="/mnt/D0D8D177D8D15C72/PycharmProjects/Adapted-Center-and-Scale-Prediction/util" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="/mnt/D0D8D177D8D15C72/PycharmProjects/Adapted-Center-and-Scale-Prediction/util/draw_bbox.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="draw_bbox" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/util" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/util/draw_bbox.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="eval_MR_multisetup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/eval_city/eval_script" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eval_city/eval_script/eval_MR_multisetup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="load_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/ACSP/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataloader" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataloader/load_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="load_data" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/ACSP/bin/python" />
+      <option name="WORKING_DIRECTORY" value="/mnt/D0D8D177D8D15C72/PycharmProjects/Adapted-Center-and-Scale-Prediction/dataloader" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="/mnt/D0D8D177D8D15C72/PycharmProjects/Adapted-Center-and-Scale-Prediction/dataloader/load_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="load_data" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/ACSP/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataloader" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataloader/load_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="save_test_vishm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/ACSP/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/save_test_vishm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="save_test_vishm_withoutnms" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/save_test_vishm_withoutnms.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/ACSP/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_vis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/ACSP/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_vis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Adapted-Center-and-Scale-Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/ACSP/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.draw_bbox (1)" />
+      <item itemvalue="Python.draw_bbox" />
+      <item itemvalue="Python.save_test_vishm_withoutnms" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.train" />
+      <item itemvalue="Python.draw_bbox (2)" />
+      <item itemvalue="Python.eval_MR_multisetup" />
+      <item itemvalue="Python.load_data" />
+      <item itemvalue="Python.save_test_vishm" />
+      <item itemvalue="Python.test_vis" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_vis" />
+        <item itemvalue="Python.draw_bbox (2)" />
+        <item itemvalue="Python.load_data" />
+        <item itemvalue="Python.save_test_vishm" />
+        <item itemvalue="Python.eval_MR_multisetup" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4220dbc2-f2a2-4cbb-bb58-bec9be079001" name="Default Changelist" comment="" />
+      <created>1604812253031</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604812253031</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="454" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1641716176127">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="454" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1641716176127" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1641711716236">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1641711716236" />
+    <state x="655" y="143" width="666" height="819" key="#test" timestamp="1641308955974">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="655" y="143" width="666" height="819" key="#test/67.27.1853.1053@67.27.1853.1053" timestamp="1641308955974" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1640095132943">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1640095132943" />
+    <state width="1830" height="231" key="GridCell.Tab.0.bottom" timestamp="1641718588455">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641308395098" />
+    <state width="1830" height="231" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1641718588455" />
+    <state width="1830" height="231" key="GridCell.Tab.0.center" timestamp="1641718588454">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641308395098" />
+    <state width="1830" height="231" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1641718588454" />
+    <state width="1830" height="231" key="GridCell.Tab.0.left" timestamp="1641718588454">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641308395098" />
+    <state width="1830" height="231" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1641718588454" />
+    <state width="1830" height="231" key="GridCell.Tab.0.right" timestamp="1641718588455">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641308395098" />
+    <state width="1830" height="231" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1641718588455" />
+    <state width="1830" height="263" key="GridCell.Tab.1.bottom" timestamp="1641718588450">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641308395098" />
+    <state width="1830" height="263" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1641718588450" />
+    <state width="1830" height="263" key="GridCell.Tab.1.center" timestamp="1641718588449">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641308395098" />
+    <state width="1830" height="263" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1641718588449" />
+    <state width="1830" height="263" key="GridCell.Tab.1.left" timestamp="1641718588449">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641308395098" />
+    <state width="1830" height="263" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1641718588449" />
+    <state width="1830" height="263" key="GridCell.Tab.1.right" timestamp="1641718588450">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641308395098" />
+    <state width="1830" height="263" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1641718588450" />
+    <state width="926" height="527" key="XDebugger.FullValuePopup" timestamp="1641716854538">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="960" height="521" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1641307853461" />
+    <state width="926" height="527" key="XDebugger.FullValuePopup/67.27.1853.1053@67.27.1853.1053" timestamp="1641716854538" />
+    <state x="910" y="418" width="904" height="576" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1641716028262">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="910" y="418" width="904" height="576" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/67.27.1853.1053@67.27.1853.1053" timestamp="1641716028262" />
+    <state x="610" y="227" width="697" height="670" key="search.everywhere.popup" timestamp="1646227713453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="610" y="227" width="697" height="670" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1646227713453" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1641717332096" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_vis.py</url>
+          <line>103</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///mnt/D0D8D177D8D15C72/PycharmProjects/Adapted-Center-and-Scale-Prediction/util/draw_bbox.py</url>
+          <line>129</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
