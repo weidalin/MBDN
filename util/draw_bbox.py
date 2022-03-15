@@ -86,49 +86,49 @@ def draw_boxes(img, boxes, category_ids, cats, scores=None, tags=None, line_thic
             cv2.putText(img, text, (x1, y1 - 7), cv2.FONT_ITALIC, 0.5, color[line_color], line_thick)
     return img
 
-# anno = get_anno('./eval_city/val_gt.json')
-# anns_id = 1
-# img_paths = anno.imgs
-# anns = anno.anns
-# cats = anno.cats
-# for i in range(1,501):
-#     # img_path = anno['imgs'][i]['im_name']
-#     img_path = img_paths[i]['im_name']
-#     print("imwrite %d image: %s"%(i, img_path))
-#     imgage_id = img_paths[i]['id']
-#     image = cv2.imread("../data/citypersons/images/val/%s"%img_path)
-#     bboxes = []
-#     vboxes = []
-#     heights = []
-#     category_ids = []
-#     vis_ratios = []
-#
-#     while anns[anns_id]['image_id']==imgage_id:
-#         imgage_id = anns[anns_id]['image_id']
-#         bbox = anns[anns_id]['bbox']
-#         ignore = anns[anns_id]["ignore"]
-#         if ignore == 1:
-#             anns_id +=1
-#             continue
-#
-#         bbox[2] = bbox[2]+bbox[0]
-#         bbox[3] = bbox[3]+bbox[1]
-#         vbox = anns[anns_id]['vis_bbox']
-#         vbox[2] = vbox[2]+vbox[0]
-#         vbox[3] = vbox[3]+vbox[1]
-#         vis_ratio = anns[anns_id]['vis_ratio']
-#         category_id = anns[anns_id]["category_id"]
-#         category_ids.append(category_id)
-#         anns_id+=1
-#         height = anns[anns_id]['height']
-#         heights.append(height)
-#         vis_ratios.append(vis_ratio)
-#         bboxes.append(bbox)
-#         vboxes.append(vbox)
-#     if image is None:
-#         print("can't find %s"%img_path)
-#     image = draw_boxes(image, vboxes, category_ids, cats, heights, vis_ratios, line_thick=2, line_color='blue', vis=True)
-#     image = draw_boxes(image, bboxes, category_ids, cats, heights,  vis_ratios, line_thick=2, line_color='white', vis=False)
-#     img_save_path = '/home/weida/datasets/cityperson/leftImg8bit_trainvaltest/leftImg8bit/vis_val/%s'%img_path
-#     cv2.imwrite(img_save_path , image)
+anno = get_anno('../eval_city/val_gt.json')
+anns_id = 1
+img_paths = anno.imgs
+anns = anno.anns
+cats = anno.cats
+for i in range(1,501):
+    # img_path = anno['imgs'][i]['im_name']
+    img_path = img_paths[i]['im_name']
+    print("imwrite %d image: %s"%(i, img_path))
+    imgage_id = img_paths[i]['id']
+    image = cv2.imread("./data/citypersons/images/val/%s"%img_path)
+    bboxes = []
+    vboxes = []
+    heights = []
+    category_ids = []
+    vis_ratios = []
+
+    while anns[anns_id]['image_id']==imgage_id:
+        imgage_id = anns[anns_id]['image_id']
+        bbox = anns[anns_id]['bbox']
+        ignore = anns[anns_id]["ignore"]
+        if ignore == 1:
+            anns_id +=1
+            continue
+
+        bbox[2] = bbox[2]+bbox[0]
+        bbox[3] = bbox[3]+bbox[1]
+        vbox = anns[anns_id]['vis_bbox']
+        vbox[2] = vbox[2]+vbox[0]
+        vbox[3] = vbox[3]+vbox[1]
+        vis_ratio = anns[anns_id]['vis_ratio']
+        category_id = anns[anns_id]["category_id"]
+        category_ids.append(category_id)
+        anns_id+=1
+        height = anns[anns_id]['height']
+        heights.append(height)
+        vis_ratios.append(vis_ratio)
+        bboxes.append(bbox)
+        vboxes.append(vbox)
+    if image is None:
+        print("can't find %s"%img_path)
+    image = draw_boxes(image, vboxes, category_ids, cats, heights, vis_ratios, line_thick=2, line_color='blue', vis=True)
+    image = draw_boxes(image, bboxes, category_ids, cats, heights,  vis_ratios, line_thick=2, line_color='white', vis=False)
+    img_save_path = '/home/weida/datasets/cityperson/leftImg8bit_trainvaltest/leftImg8bit/vis_val/%s'%img_path
+    cv2.imwrite(img_save_path , image)
 

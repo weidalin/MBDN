@@ -49,6 +49,7 @@ class BasicBlock(nn.Module):
 
         return out
 
+
 class SELayer(nn.Module):
     def __init__(self, channel, reduction=16):
         super(SELayer, self).__init__()
@@ -79,7 +80,7 @@ class Bottleneck(nn.Module):
         self.sn3 = SwitchNorm2d(planes, using_moving_average=using_moving_average, using_bn=using_bn)
         self.conv3 = nn.Conv2d(planes, planes * 4, kernel_size=1, bias=False)
         self.relu = nn.ReLU(inplace=True)
-        self.se = SELayer(planes * 4, reduction=16)#add se
+        # self.se = SELayer(planes * 4, reduction=16)
         self.downsample = downsample
         self.stride = stride
 
@@ -97,8 +98,7 @@ class Bottleneck(nn.Module):
         out = self.sn3(out)
         out = self.relu(out)
         out = self.conv3(out)
-        out = self.se(out)
-
+        # out = self.se(out) #senet
 
         if self.downsample is not None:
             residual = self.downsample(out_preact)
@@ -107,10 +107,11 @@ class Bottleneck(nn.Module):
 
         return out
 
-
+#ResNetV2SN(Bottleneck, [3, 4, 6, 3], **kwargs)
 class ResNetV2SN(nn.Module):
 
     def __init__(self, block, layers, num_classes=1000, using_moving_average=True, using_bn=True):
+        # print("ResNetV2SN.__init__..................")
         self.inplanes = 64
         self.using_moving_average=using_moving_average
         self.using_bn = using_bn
@@ -152,6 +153,7 @@ class ResNetV2SN(nn.Module):
         return nn.Sequential(*layers)
 
     def forward(self, x):
+        # print("ResNetV2SN forward..............")
         x = self.conv1(x)
         x = self.sn1(x)
         x = self.relu(x)
@@ -201,8 +203,7 @@ def resnetv2sn50(pretrained = True, **kwargs):
             mid[right[i]] = checkpoint['state_dict'][wrong[i]]
         checkpoint_right = dict()
         checkpoint_right['state_dict'] = mid
-        # model.load_state_dict(mid)
-        model.load_state_dict(mid, False)
+        model.load_state_dict(mid,strict=False)
     return model
 
 

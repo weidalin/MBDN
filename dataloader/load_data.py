@@ -20,6 +20,7 @@ def get_citypersons(root_dir='./data/citypersons', type='train'):
 
     for l in range(len(annos[index][0])):
         anno = annos[index][0][l]
+        # print(anno)
         cityname = anno[0][0][0][0].encode('utf8')
         imgname = anno[0][0][1][0].encode('utf8')
         gts = anno[0][0][2]
@@ -36,9 +37,9 @@ def get_citypersons(root_dir='./data/citypersons', type='train'):
             wv, hv = min(int(wv), cols - xv1 - 1), min(int(hv), rows - yv1 - 1)
 
             if label == 1 and h >= 50:
-                box = np.array([int(x1), int(y1), int(x1) + int(w), int(y1) + int(h)])
+                box = np.array([int(x1), int(y1), int(x1) + int(w), int(y1) + int(h)])#xywh --> xyxy
                 boxes.append(box)
-                vis_box = np.array([int(xv1), int(yv1), int(xv1) + int(wv), int(yv1) + int(hv)])
+                vis_box = np.array([int(xv1), int(yv1), int(xv1) + int(wv), int(yv1) + int(hv)])#xywh --> xyxy
                 vis_boxes.append(vis_box)
             else:
                 ig_box = np.array([int(x1), int(y1), int(x1) + int(w), int(y1) + int(h)])

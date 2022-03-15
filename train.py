@@ -6,6 +6,7 @@ import torch.optim as optim
 import numpy as np
 import time
 from copy import deepcopy
+from tensorboardX import SummaryWriter
 from torch.utils.data import DataLoader
 from torchvision.transforms import ToTensor, Normalize, Compose, ColorJitter
 
@@ -14,45 +15,43 @@ from net.network_sn_101 import ACSPNet
 from config import Config
 from dataloader.loader import *
 from sys import exit
-
 ticks = time.time()
 
 config = Config()
 config.train_path = './data/citypersons'
 config.test_path = './data/citypersons'
-# config.gpu_ids = [0, 1]
-config.gpu_ids = [0]
-config.onegpu = 2
+config.gpu_ids = [0, 1]
+config.onegpu = 1
+# config.size_train = (224, 448)
 # config.size_train = (1024, 2048)
 config.size_train = (640, 1280)
 config.size_test = (1024, 2048)
-config.init_lr = 2e-4
+config.init_lr = 1e-4
 config.num_epochs = 150
 config.val = False
 config.offset = True
 config.teacher = True
-
-# version = 'resnetv2sn50_1center_gaussmap_original_'+str(config.size_train[0])+"_"+str(config.size_train[1])+'_1gpuper'+str(config.onegpu)+'img'
 # dataset
 traintransform = Compose(
     [ColorJitter(brightness=0.5), ToTensor(), Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 traindataset = CityPersons(path=config.train_path, type='train', config=config,
                            transform=traintransform)
-trainloader = DataLoader(traindataset, batch_size=config.onegpu * len(config.gpu_ids))
+trainloader = DataLoader(traindataset, batch_size=config.onegpu*len(config.gpu_ids))
+
 
 # net
 print('Net...')
 net = ACSPNet().cuda()
-version = 'V0_%s_1centergaussmap_originaladdsenetinresnet_%d_%d_%dgpuper%dimg_lr%s' % (
-net.resnetType, config.size_train[0], config.size_train[1], len(config.gpu_ids), config.onegpu, config.init_lr)
 
+version = 'V42_%s_headandfullvisible3center3gaussmap_triggerat_originalgausspointmutiyy1103add08_%d_%d_%dgpuper%dimg_lr%s'%(net.resnetType, config.size_train[0], config.size_train[1],len(config.gpu_ids),config.onegpu,config.init_lr)
 # To continue training
 resume_from = ''
-# resume_from = './models/%s/ckpt/ACSP_27.pth.tea'%version
+resume_from = './models/%s/ckpt/ACSP_69.pth.tea'%version
+# resume_from = './models/V24_resnetv2sn50_headandfull2center2gaussmap_fixoffloss_fixtopgaussmap_sigis08_640_1280_2gpuper2img_lr0.0002/ckpt/ACSP_88.pth.tea'
 begin_epoch_num = 0
-if len(resume_from) > 1:
+if len(resume_from)>0:
     net.load_state_dict(torch.load(resume_from))
-    begin_epoch_num = resume_from[resume_from.rfind('_') + 1:resume_from.rfind('.pth')]
+    begin_epoch_num = resume_from[resume_from.rfind('_')+1:resume_from.rfind('.pth')]
 print("begin_epoch_num:", begin_epoch_num)
 
 # position
@@ -72,7 +71,7 @@ if config.teacher:
     teacher_dict = net.state_dict()
 
 # net = nn.DataParallel(net, device_ids=config.gpu_ids)
-# net = nn.DataParallel(net, device_ids=config.gpu_ids)
+net = nn.DataParallel(net, device_ids=config.gpu_ids)
 
 optimizer = optim.Adam(params, lr=config.init_lr)
 
@@ -81,36 +80,53 @@ train_batches = len(trainloader)
 
 config.print_conf()
 
+#outputs-->torch.Size([2, 4, 160, 320])x3        labels-->torch.Size([2, 4, 3, 160, 320])x3
+def criterion(output, label): #lebel 0(gausshm, mask, hm)  1(logheigh, mask)  2(height-Y offset, width-X offset, mask)
 
-def criterion(output, label):
-    cls_loss = center(output[0], label[0])
-    reg_loss = height(output[1], label[1])
-    off_loss = offset(output[2], label[2])
+    cls_loss_1 = center(torch.unsqueeze(output[0][:, 0], dim=1), label[0][:, 0])
+    cls_loss_2 = center(torch.unsqueeze(output[0][:, 1], dim=1), label[0][:, 1])
+    v_cls_loss = center(torch.unsqueeze(output[0][:, 2], dim=1), label[0][:, 2])
+
+    reg_loss_1 = height(torch.unsqueeze(output[1][:, 0], dim=1), label[1][:, 0])
+    reg_loss_2 = height(torch.unsqueeze(output[1][:, 1], dim=1), label[1][:, 1])
+    off_loss_1 = offset(output[2][:, :2], label[2][:, 0])
+    off_loss_2 = offset(output[2][:, 2:4], label[2][:, 1])
+
+
+    cls_loss = cls_loss_1 + cls_loss_2 + v_cls_loss
+    reg_loss = reg_loss_1 + reg_loss_2
+    off_loss = off_loss_1 + off_loss_2
+
+    # cls_loss = center(output[0], label[0])
+    # reg_loss = height(output[1], label[1])
+    # off_loss = offset(output[2], label[2])
     return cls_loss, reg_loss, off_loss
 
 
 def train():
     print('Training start')
-    if not os.path.exists('./models/' + version):
-        os.mkdir('./models/' + version)
-    if not os.path.exists('./models/' + version + '/ckpt/'):
-        os.mkdir('./models/' + version + '/ckpt')
-    if not os.path.exists('./models/' + version + '/loss'):
-        os.mkdir('./models/' + version + '/loss')
-    if not os.path.exists('./models/' + version + '/log'):
-        os.mkdir('./models/' + version + '/log')
+    if not os.path.exists('./models/'+version):
+        os.mkdir('./models/'+version)
+    if not os.path.exists('./models/'+version+'/ckpt/'):
+        os.mkdir('./models/'+version+'/ckpt')
+    if not os.path.exists('./models/'+version+'/loss'):
+        os.mkdir('./models/'+version+'/loss')
+    if not os.path.exists('./models/'+version+'/log'):
+        os.mkdir('./models/'+version+'/log')
+        os.mkdir('./models/'+version+'/validation_result_log')
 
     # open log file
-    log_floder = './models/' + version + '/log/'
+    log_floder = './models/'+version+'/log/'
     log_file = log_floder + time.strftime('%Y%m%d_%H%M%S', time.localtime(time.time())) + '.log'
     log = open(log_file, 'w')
 
     best_loss = np.Inf
     best_loss_epoch = 0
 
+    
     loss_list = []
 
-    for epoch in range(int(begin_epoch_num), 150):
+    for epoch in range(int(begin_epoch_num),150):
         print('----------')
         print('Epoch %d begin' % (epoch + 1))
         t1 = time.time()
@@ -130,25 +146,33 @@ def train():
             optimizer.zero_grad()
 
             # heat map
-            outputs = net(inputs)
+            outputs = net(inputs) #torch.Size([1, 1, 160, 320]) torch.Size([1, 1, 160, 320]) torch.Size([1, 2, 160, 320]) input:torch.Size([1, 3, 640, 1280])
 
             # loss
+
             cls_loss, reg_loss, off_loss = criterion(outputs, labels)
+            # cls_loss_1, reg_loss_1, off_loss_1 = criterion(outputs[0][0], labels[0][0])
+            # cls_loss_2, reg_loss_2, off_loss_2 = criterion(outputs[1], labels[0][1])
+            # cls_loss_3, reg_loss_3, off_loss_3 = criterion(outputs[2], labels[0][2])
+            # v_cls_loss, v_reg_loss, v_off_loss = criterion(outputs[3], labels[0][3])
+
+
             loss = cls_loss + reg_loss + off_loss
 
             # back-prop
             loss.backward()
 
+
             # update param
             optimizer.step()
             if config.teacher:
-                # for k, v in net.module.state_dict().items():
-                for k, v in net.state_dict().items():
-                    if k.find('num_batches_tracked') == -1:  # ？？？
-                        # print("Use mean teacher")
+                for k, v in net.module.state_dict().items():
+                # for k, v in net.state_dict().items():
+                    if k.find('num_batches_tracked') == -1:#？？？
+                        #print("Use mean teacher")
                         teacher_dict[k] = config.alpha * teacher_dict[k] + (1 - config.alpha) * v
                     else:
-                        # print("Nullify mean teacher")
+                        #print("Nullify mean teacher")
                         teacher_dict[k] = 1 * v
 
             # print statistics
@@ -158,12 +182,10 @@ def train():
             batch_off_loss = off_loss.item()
 
             t4 = time.time()
-            print(
-                '\r[Epoch %d/150, Batch %d/%d]$ <Total loss: %.6f> cls: %.6f, reg: %.6f, off: %.6f, Time: %.3f sec        ' %
-                (epoch + 1, i + 1, train_batches, batch_loss, batch_cls_loss, batch_reg_loss, batch_off_loss, t4 - t3)),
-            log.write(
-                '\r[Epoch %d/150, Batch %d/%d]$ <Total loss: %.6f> cls: %.6f, reg: %.6f, off: %.6f, Time: %.3f sec        ' %
-                (epoch + 1, i + 1, train_batches, batch_loss, batch_cls_loss, batch_reg_loss, batch_off_loss, t4 - t3))
+            print('\r[Epoch %d/150, Batch %d/%d]$ <Total loss: %.6f> cls: %.6f, reg: %.6f, off: %.6f, Time: %.3f sec        ' %
+                  (epoch + 1, i + 1, train_batches, batch_loss, batch_cls_loss, batch_reg_loss, batch_off_loss, t4-t3)),
+            log.write('\r[Epoch %d/150, Batch %d/%d]$ <Total loss: %.6f> cls: %.6f, reg: %.6f, off: %.6f, Time: %.3f sec        ' %
+                  (epoch + 1, i + 1, train_batches, batch_loss, batch_cls_loss, batch_reg_loss, batch_off_loss, t4-t3))
             epoch_loss += batch_loss
         print('')
 
@@ -171,28 +193,31 @@ def train():
         epoch_loss /= len(trainloader)
         loss_list.append(epoch_loss)
         loss_out = np.array(loss_list)
-        name = "./models/" + version + "/loss/loss_" + str(epoch) + ".npy"
-        np.save(name, loss_out)
-
-        print('Epoch %d end, AvgLoss is %.6f, Time used %.1f sec.' % (epoch + 1, epoch_loss, int(t2 - t1)))
-        log.write('Epoch %d end, AvgLoss is %.6f, Time used %.1f sec.' % (epoch + 1, epoch_loss, int(t2 - t1)))
+        name = "./models/"+version+"/loss/loss_" + str(epoch) + ".npy"
+        np.save(name,loss_out)
+        
+        print('Epoch %d end, AvgLoss is %.6f, Time used %.1f sec.' % (epoch+1, epoch_loss, int(t2-t1)))
+        log.write('Epoch %d end, AvgLoss is %.6f, Time used %.1f sec.' % (epoch+1, epoch_loss, int(t2-t1)))
         if epoch_loss < best_loss:
             best_loss = epoch_loss
             best_loss_epoch = epoch + 1
         print('Epoch %d has lowest loss: %.7f' % (best_loss_epoch, best_loss))
 
-        log.write('%d %.7f\n' % (epoch + 1, epoch_loss))
-
+        
+        log.write('%d %.7f\n' % (epoch+1, epoch_loss))
+            
         print('Save checkpoint...')
-        filename = './models/%s/ckpt/%s_%d.pth' % (version, 'ACSP', epoch + 1)
+        filename = './models/%s/ckpt/%s_%d.pth' % (version,'ACSP',epoch+1)
 
         # torch.save(net.module.state_dict(), filename)
         torch.save(net.state_dict(), filename)
         if config.teacher:
-            torch.save(teacher_dict, filename + '.tea')
+            torch.save(teacher_dict, filename+'.tea')
+
         print('%s saved.' % filename)
 
     log.close()
+
 
 
 if __name__ == '__main__':

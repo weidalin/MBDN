@@ -1,6 +1,7 @@
 from __future__ import division
 import cv2
 import numpy as np
+from util.nms.py_cpu_nms import py_cpu_nms
 from util.nms_wrapper import nms
 
 
@@ -37,23 +38,33 @@ def vis_detections(im, class_det, w=None):
         cv2.imwrite(w, im)
 
 
-def parse_det_offset(r, pos, height, offset, size, score=0.1, down=4, nms_thresh=0.3):
-    pos = np.squeeze(pos)
-    height = np.squeeze(height)
-    offset_y = offset[0, 0, :, :]
-    offset_x = offset[0, 1, :, :]
-    y_c, x_c = np.where(pos > score)
+def parse_det_offset(r, poses, heights, offsets, size, score=0.1, down=4, nms_thresh=0.3):
+    poses = np.squeeze(poses)
+    heights = np.squeeze(heights)
     boxs = []
-    if len(y_c) > 0:
-        for i in range(len(y_c)):
-            h = np.exp(height[y_c[i], x_c[i]]) * down
-            w = r * h
-            o_y = offset_y[y_c[i], x_c[i]]
-            o_x = offset_x[y_c[i], x_c[i]]
-            s = pos[y_c[i], x_c[i]]
-            x1, y1 = max(0, (x_c[i] + o_x + 0.5) * down - w / 2), max(0, (y_c[i] + o_y + 0.5) * down - h / 2)
-            boxs.append([x1, y1, min(x1 + w, size[1]), min(y1 + h, size[0]), s])
-        boxs = np.asarray(boxs, dtype=np.float32)
-        keep = nms(boxs, nms_thresh, usegpu=False, gpu_id=0)
-        boxs = boxs[keep, :]
+    for tcw in range(poses.shape[0]-1):
+        pos = poses[tcw]
+        height = heights[tcw]
+        offset_y = offsets[0, 0+2*tcw, :, :]
+        offset_x = offsets[0, 1+2*tcw, :, :]
+        y_c, x_c = np.where(pos > score)
+        if len(y_c) > 0:
+            for i in range(len(y_c)):
+                h = np.exp(height[y_c[i], x_c[i]]) * down
+                w = r * h
+                o_y = offset_y[y_c[i], x_c[i]]
+                o_x = offset_x[y_c[i], x_c[i]]
+                s = pos[y_c[i], x_c[i]]
+                if tcw == 0:
+                    x1, y1 = max(0, (x_c[i] + o_x + 0.5) * down - w / 2), max(0, (y_c[i] + o_y + 0.5) * down - h*0.08)
+                elif tcw ==1:
+                    x1, y1 = max(0, (x_c[i] + o_x + 0.5) * down - w / 2), max(0, (y_c[i] + o_y + 0.5) * down - h*0.5)
+                else:
+                    x1, y1 = max(0, (x_c[i] + o_x + 0.5) * down - w / 2), max(0, (y_c[i] + o_y + 0.5) * down - h*0.9)
+                boxs.append([x1, y1, min(x1 + w, size[1]), min(y1 + h, size[0]), s, tcw])  # xyxy
+    boxs = np.asarray(boxs, dtype=np.float32)
+    if len(boxs)>0:
+        # keep = py_cpu_nms(boxs, nms_thresh)
+        keep = nms(boxs, nms_thresh, False, False)
+        boxs = boxs[keep]
     return boxs
