@@ -20,5 +20,5 @@ Put `ACSP_150.pth.tea` into `models/V42_resnetv2sn101_headandfullvisible3center3
 
 Put `pretrained` into 'data' folder
 
-[链接](https://pan.baidu.com/s/1wFppepz48cK7OxM9rcKEzg?pwd=6k9r)
+[model link](https://pan.baidu.com/s/1wFppepz48cK7OxM9rcKEzg?pwd=6k9r)
 
