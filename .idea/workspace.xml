@@ -7,8 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4220dbc2-f2a2-4cbb-bb58-bec9be079001" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Adapted-Center-and-Scale-Prediction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Adapted-Center-and-Scale-Prediction.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,19 +42,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/models/Caltech_V0_resnetv2sn50_1centergaussmap_originaladdsenetinresnet_480_640_1gpuper1img_lr0.0002/backup" />
-      <recent name="$PROJECT_DIR$/eval_city" />
-      <recent name="$PROJECT_DIR$/dataloader" />
-      <recent name="$PROJECT_DIR$/data/citypersons" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/models/models_baskup" />
       <recent name="$PROJECT_DIR$/models/V5_resnetv2sn50_4brand4center4gaussmap_640_1280_2gpuper2img_lr0.0002/ckpt" />
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/models/V47_resnetv2sn101_headandfullvisiblebottom4center4gaussmap_triggerat_refineloss_pretrainfrom_best_originalgausspointmutiyy1103add08_544_1088_1gpuper1img_lr0.0002/ckpt" />
       <recent name="$PROJECT_DIR$/models/V24_resnetv2sn50_headandfull2center2gaussmap_fixoffloss_fixtopgaussmap_sigis08_640_1280_1gpuper1img_lr0.0002/ckpt" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\PycharmProjects\Adapted-Center-and-Scale-Prediction" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/models/Caltech_V0_resnetv2sn50_1centergaussmap_originaladdsenetinresnet_480_640_1gpuper1img_lr0.0002/backup" />
+      <recent name="$PROJECT_DIR$/eval_city" />
+      <recent name="$PROJECT_DIR$/dataloader" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test_vis">

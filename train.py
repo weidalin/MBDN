@@ -46,7 +46,7 @@ net = ACSPNet().cuda()
 version = 'V42_%s_headandfullvisible3center3gaussmap_triggerat_originalgausspointmutiyy1103add08_%d_%d_%dgpuper%dimg_lr%s'%(net.resnetType, config.size_train[0], config.size_train[1],len(config.gpu_ids),config.onegpu,config.init_lr)
 # To continue training
 resume_from = ''
-resume_from = './models/%s/ckpt/ACSP_69.pth.tea'%version
+# resume_from = './models/%s/ckpt/ACSP_69.pth.tea'%version
 # resume_from = './models/V24_resnetv2sn50_headandfull2center2gaussmap_fixoffloss_fixtopgaussmap_sigis08_640_1280_2gpuper2img_lr0.0002/ckpt/ACSP_88.pth.tea'
 begin_epoch_num = 0
 if len(resume_from)>0:

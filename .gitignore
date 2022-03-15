@@ -1,11 +1,13 @@
-.pth
-.pth.tea
+*.pth
+*.pth.tea
 .pyx
 .png
 .npy
-.log
+*.log
 .mat
+models
+
 ResNet50v2+SN(8,32)-77.57.pth
 ResNet101v2+SN(8,32).pth
 __pycache__
-models/
+
