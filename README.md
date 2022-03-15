@@ -18,7 +18,7 @@ python test.py
 Put `ACSP_150.pth.tea` into `models/V42_resnetv2sn101_headandfullvisible3center3gaussmap_triggerat_originalgausspointmutiyy1103add08_640_1280_2gpuper1img_lr0.0001/ckpt
 ` folder
 
-Put `pretrained` into 'data' folder
+Put `pretrained` into `data` folder
 
 [model link](https://pan.baidu.com/s/1wFppepz48cK7OxM9rcKEzg?pwd=6k9r)
 
