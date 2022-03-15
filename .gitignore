@@ -1,11 +1,14 @@
 *.pth
 *.pth.tea
-.pyx
-.png
+*.pyx
+*.png
+*.jpg
 .npy
 *.log
 .mat
-models
+#models
+models_baskup
+Caltech_V0_resnetv2sn50_1centergaussmap_originaladdsenetinresnet_480_640_1gpuper1img_lr0.0002
 
 ResNet50v2+SN(8,32)-77.57.pth
 ResNet101v2+SN(8,32).pth
