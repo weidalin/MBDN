@@ -1,4 +1,4 @@
-## this code is forked from [ACSP](https://github.com/WangWenhao0716/Adapted-Center-and-Scale-Prediction.git) 
+## this code is forked from [ACSP](https://github.com/WangWenhao0716/Adapted-Center-and-Scale-Prediction.git) ，and modified on the basis of ACSP
 
 
 ## train
